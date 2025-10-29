@@ -1,0 +1,100 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calculadora Iniciante</title>
+<style>
+  body {
+    font-family: Arial;
+    background: #eeeeee;
+  }
+
+  .caixa {
+    background: white;
+    padding: 10px;
+    width: 250px;
+    margin: 50px auto; /* centraliza de forma simples */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  input, select, button {
+    width: 90%;
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  button {
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 3px;
+  }
+
+  #res {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="caixa">
+  <h2>Calculadora</h2>
+
+  <input id="n1" placeholder="Número 1">
+  <select id="op">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+  </select>
+  <input id="n2" placeholder="Número 2">
+
+  <button id="btnCalcular">Calcular</button>
+
+  <h3 id="res">Resultado:</h3>
+</div>
+
+<script>
+  // Quando clicar no botão...
+  document.getElementById("btnCalcular").onclick = function() {
+
+    // Pega o valor digitado
+    var numero1 = document.getElementById("n1").value;
+    var numero2 = document.getElementById("n2").value;
+
+    // Converte para número
+    numero1 = Number(numero1);
+    numero2 = Number(numero2);
+
+    // Pega a operação escolhida
+    var operacao = document.getElementById("op").value;
+
+    var resultado = 0; // Variável que vai guardar o resultado
+
+    // Verifica e faz a conta (do jeito mais direto)
+    if (operacao == "+") {
+      resultado = numero1 + numero2;
+    }
+
+    if (operacao == "-") {
+      resultado = numero1 - numero2;
+    }
+
+    if (operacao == "*") {
+      resultado = numero1 * numero2;
+    }
+
+    if (operacao == "/") {
+      resultado = numero1 / numero2;
+    }
+
+    // Mostra o resultado
+    document.getElementById("res").innerHTML = "Resultado: " + resultado;
+  }
+</script>
+
+</body>
+</html>
